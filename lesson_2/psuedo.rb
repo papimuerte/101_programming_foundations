@@ -12,7 +12,6 @@ SET num2 = b
 
 SET result = num + num2
 return result
-
 END
 
 # A method that takes an array of strings, and returns a string that is all those strings concatenated together
@@ -41,10 +40,10 @@ END
 
 # Given and array of integers
 # Iterate through each item in the array
-# Save the first value to a new array and skip the next, saving every other element. 
+# Save the first value to a new array and skip the next, saving every other element.
 # Return the new array
 
-START 
+START
 
 # Given an array of integers called numbers
 
@@ -52,7 +51,7 @@ SET iterator = 1
 
 WHILE iterator <= length of numbers
   SET current_number = value within numbers at space of iterator
-  IF iterator is even 
+  IF iterator is even
     go to the next interation
   ELSE
     new_array = [current_number]
