@@ -1,4 +1,5 @@
-VALID_CHOICES = {"r" => "rock", "p" => "paper", "s" => "scissors", "l" => "lizard", "sp" => "spock"}
+VALID_CHOICES = { r: 'rock', p: 'paper', s: 'scissors', l: 'lizard',
+                  sp: 'spock' }
 
 def prompt(message)
   Kernel.puts("=> #{message}")
@@ -28,18 +29,20 @@ def display_result(player, computer)
   end
 end
 
+def display_choices
+  VALID_CHOICES.map do |key, val|
+    puts "#{key.to_s.ljust(2)} - #{val}"
+  end
+end
+
 loop do
   choice = ''
-  values = []
-  options = []
   loop do
-    values = VALID_CHOICES.values
-    options = VALID_CHOICES.keys
-    test_zip = options.zip(values)
-    prompt("Choose one: #{options.join('= ')}#{values.join(', ')}")
-    choice = Kernel.gets().chomp()
+    prompt("Choose one: ")
+    display_choices
+    choice = gets.chomp.downcase.to_sym
 
-    if options.include?(choice)
+    if VALID_CHOICES.key?(choice)
       break
     else
       prompt("That's not a valid choice.")
@@ -47,7 +50,7 @@ loop do
   end
 
   player_choice = VALID_CHOICES[choice]
-  computer_choice = values.sample
+  computer_choice = VALID_CHOICES.values.sample
 
   prompt("You chose: #{player_choice}; Computer chose: #{computer_choice}")
 
