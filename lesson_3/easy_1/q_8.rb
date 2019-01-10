@@ -2,4 +2,4 @@ flintstones = ["Fred", "Wilma"]
 flintstones << ["Barney", "Betty"]
 flintstones << ["BamBam", "Pebbles"]
 
-flintstones.flatten
+flintstones.flatten!
