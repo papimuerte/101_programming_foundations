@@ -35,6 +35,11 @@ def display_choices
   end
 end
 
+counter = 1
+def game_counter
+  counter + 1
+end
+
 loop do
   choice = ''
   loop do
