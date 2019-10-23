@@ -1,5 +1,6 @@
 flintstones = %w(Fred Barney Wilma Betty BamBam Pebbles)
 
-flintstones.index do |name|
-  puts name[0, 2] == "Be"
+flintstones.map! do |name|
+  name[0, 3]
 end
+puts flintstones
